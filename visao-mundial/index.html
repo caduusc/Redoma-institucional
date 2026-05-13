@@ -177,7 +177,7 @@ footer a{color:var(--txt3)}
 
 <script>
 const SUPABASE_URL='https://mdylzadcnyuwpwmwrmwj.supabase.co';
-const SUPABASE_ANON='SUA_ANON_KEY_AQUI';
+const SUPABASE_ANON='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1keWx6YWRjbnl1d3B3bXdybXdqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgyNzc2MTMsImV4cCI6MjA5Mzg1MzYxM30.sz84u0XjqszeWRbY7Mg75xe6G5CincXRV75pS0NsRyo';
 const fn=document.getElementById('fn'),fp=document.getElementById('fp'),fc=document.getElementById('fc'),cl=document.getElementById('cl'),bs=document.getElementById('bs');
 fp.addEventListener('input',function(){const d=this.value.replace(/\D/g,'').slice(0,11);if(d.length<=2)this.value='('+d;else if(d.length<=7)this.value='('+d.slice(0,2)+') '+d.slice(2);else this.value='('+d.slice(0,2)+') '+d.slice(2,7)+'-'+d.slice(7);chk();});
 function chk(){bs.disabled=!(fn.value.trim().length>=2&&fp.value.replace(/\D/g,'').length>=10&&fc.checked)}
