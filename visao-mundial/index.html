@@ -187,7 +187,7 @@ bs.addEventListener('click',async function(){
   const name=fn.value.trim(),phone=fp.value.replace(/\D/g,''),err=document.getElementById('ferr');
   err.style.display='none';bs.disabled=true;bs.textContent='Enviando...';
   try{
-    const r=await fetch(SUPABASE_URL+'/rest/v1/institution_leads',{method:'POST',headers:{'Content-Type':'application/json','apikey':SUPABASE_ANON,'Authorization':'Bearer '+SUPABASE_ANON,'Prefer':'return=minimal'},body:JSON.stringify({institution_slug:'Visão-mundial',name,phone,whatsapp_consent:true})});
+    const r=await fetch(SUPABASE_URL+'/rest/v1/institution_leads',{method:'POST',headers:{'Content-Type':'application/json','apikey':SUPABASE_ANON,'Authorization':'Bearer '+SUPABASE_ANON,'Prefer':'return=minimal'},body:JSON.stringify({institution_slug:'visao-mundial',name,phone,whatsapp_consent:true})});
     if(!r.ok)throw 0;
     document.getElementById('form-fields').innerHTML='<div class="fsuc"><div class="big">&#127881;</div><h3>Pronto, '+name.split(' ')[0]+'!</h3><p>Em breve voce recebera uma mensagem no WhatsApp da Redoma com as instrucoes para comecar a apoiar a <strong>Visão Mundial</strong>.</p></div>';
   }catch{err.textContent='Algo deu errado. Tente novamente.';err.style.display='block';bs.disabled=false;bs.textContent='Quero participar →';}
