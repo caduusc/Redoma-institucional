@@ -222,7 +222,7 @@ bs.addEventListener('click',async function(){
   try{
     const r=await fetch(SUPABASE_URL+'/rest/v1/institution_leads',{method:'POST',headers:{'Content-Type':'application/json','apikey':SUPABASE_ANON,'Authorization':'Bearer '+SUPABASE_ANON,'Prefer':'return=minimal'},body:JSON.stringify({institution_slug:'adote-um-cidadao',name,phone,whatsapp_consent:true})});
     if(!r.ok)throw 0;
-    document.getElementById('form-fields').innerHTML='<div class="fsuc"><div class="big">&#9917;</div><h3>Pronto, '+name.split(' ')[0]+'!</h3><p>Em breve você receberá uma mensagem no WhatsApp da Redoma com as instruções para começar a apoiar o <strong>Adote um Cidadão</strong>.</p></div>';
+    document.getElementById('form-fields').innerHTML='<div class="fsuc"><div class="big">&#128153;</div><h3>Pronto, '+name.split(' ')[0]+'!</h3><p>Em breve você receberá uma mensagem no WhatsApp da Redoma com as instruções para começar a apoiar o <strong>Adote um Cidadão</strong>.</p></div>';
   }catch{err.textContent='Algo deu errado. Tente novamente.';err.style.display='block';bs.disabled=false;bs.textContent='Quero participar →';}
 });
 document.querySelectorAll('*').forEach(el => {
